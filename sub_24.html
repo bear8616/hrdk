@@ -15,10 +15,10 @@
 	<style>
 
 :root {
-	--color-first: #F4C5BE; 	/* 전체 배경 */
+	--color-first: #B0BCCD; 	/* 전체 배경 */
 	--color-second: #000; 		/* 스토리라벨 h2 색상 */
 	--color-third: #000;		/* 박스 h4 색상 */
-	--color-fourth: #E8725F; 	/* 프롤로그 배경 */
+	--color-fourth: #3C5983; 	/* 프롤로그 배경 */
 	--color-fifth: #000; 		/* 프롤로그 색상 */
 }
 body {
@@ -74,7 +74,7 @@ body {
 	color: #fff;
 	background-color: var(--color-fourth);
 	border-radius: 1.2rem;
-	/*margin: 1rem 0 2rem;*/
+	margin-bottom: 2rem;
 }
 .license-box-container h4 span {
 	font-size: 1rem;
@@ -89,14 +89,18 @@ body {
 	margin: 1rem 0 0;
 }
 .license-box-container h6 {
-	font-size: 1.1rem;
+	font-size: 1.2rem;
 	font-family: Paperlogy-5Medium;
 	color: var(--color-fourth);
 	margin-top: 0.5rem;
 }
 .license-box-container li {
-	font-size: 1.1rem;
+	font-size: 1.2rem;
 	font-family: Paperlogy-4Regular;
+	margin-top: 0.5rem;
+	width: 50%;
+	word-break: keep-all;
+	line-height: 1.3;
 }
 .license-box-container .bul li {
 	padding-left: 1rem;
@@ -106,10 +110,10 @@ body {
 	content: "";
 	display: block;
 	width: 10px;
-	height: 23px;
+	height: 20px;
 	position: absolute;
 	left: 0;
-	top: 50%;
+	top: 0.8rem;
 	transform: translateY(-50%);
 	background: url("contents/sub_24_bul.png") 0 0 no-repeat;
 	background-size: 100% 100%;
@@ -120,12 +124,29 @@ body {
 .license-box-container p {
 	margin-top: 2rem;
 	width: 40%;
+	font-weight: 300;
+}
+.license-box-container p.pdb-30 {
+	padding-bottom: 3rem;
+}
+.license-box-container p.pdt-30 {
+	padding-top: 3rem;
+}
+.license-box-container p b {
+	font-weight: 600;
+	display: block;
 }
 .license-box-container figure {
-	width: 50%;
+	width: 55%;
 	position: absolute;
 	bottom: 0;
-	right: 0;
+	right: 0.5rem;
+}
+.small .license-box-container figure {
+	width: 40%;
+}
+.big .license-box-container figure {
+	width: 65%;
 }
 @media (max-width: 767px) {
     .article-header-container-2 {
@@ -160,11 +181,10 @@ body {
 							<img src="contents/sub_24_top_text.png">
 						</figure>
 						<h2>
-							직무능력강화 자격증 총정리
+							환경 보호 자격증 총정리
 						</h2>
 						<p>
-							급변하는 산업 환경 속에서 자격증은 더 이상 선택이 아닌 필수로 자리 잡고 있다. 자격증은 단순히 전문성의 증명을 넘어 커리어 성장, 이직 기회 확대, 그리고 안정적인 고용으로 이어진다. 이에 따라 직장인의 경쟁력을 높여줄 자격증의 종류는 무엇인지, 직무내용과 추천이유를 함께 살펴보자.
-						</p>
+							기후변화와 환경 위기가 일상이 된 지금, 정부, 기업, 산업 전반에서 지속가능성을 핵심 가치로 삼으며, 환경 전문 인력의 수요가 지속적으로 증가하고 있다. 수질, 대기, 토양, 소음 진동, 폐기물, 생태 복원 등 다양한 분야에서 환경 전문가로 성장할 수 있는 자격증의 종류는 무엇인지 직무내용과 진로를 함께 살펴보자.
 						<div class="article-meta">
 							<span>글</span>
 							<span class="pipe">ㅣ</span>
@@ -184,41 +204,26 @@ body {
 		<section>
 			<div class="article-body">
 				<article>
-					<!-- <div class="article-prologue">
-						<p>
-							특성화고에 재학 중인 김민수(가명) 씨는 미래에 자동차 분야 숙련기술인을 꿈꾸고 있다. 그러나 학생의 신분으로서 무엇을 준비해야 할지, 또 어떻게 하면 빠르게 장인의 길에 다가설 수 있는지 고민이 많다. 스스로의 노력만으로 방향을 잡기 어렵다고 느낀 민수 씨는 한국산업인력공단 글로벌숙련기술진흥원 숙련기술기획부에 도움을 요청했다.
-						</p>				
-					</div> -->
 					<div class="license-box">
 						<figure class="license-box-clip">
 							<img src="contents/sub_24_clip.png">
 						</figure>
 						<div class="license-box-container">
 							<h4>
-								전기기사
+								수질환경기사
 							</h4>
 							<div class="license-box-info">
-								<h5>
-									분야&추천이유
-								</h5>
 								<h6>
-									분야:
-								</h6>
-								<ul>
-									<li>전기, 발전소, 건설</li>
-								</ul>
-								<h6>
-									추천이유:
+									진로:
 								</h6>
 								<ul class="bul">
-									<li>공기업·대기업 취업 핵심 스펙</li>
-									<li>연봉 경쟁력 강화 자격</li>
-									<li>안전관리자 기준 충족</li>
+									<li>한국환경공단, 한국수자원공사 등 유관기관</li>
+									<li>오·폐수 배출업체 및 전문 폐수처리업체</li>
 								</ul>
 							</div>
 							<p>
 								<b>직무내용:</b>
-								전기설비에 관한 이론을 기반으로 전기기계·기구의 선정, 전기설비의 계획, 에너지 절약기술 적용, 용량산정, 재료선정 등 설계도서 작성, 감리, 유지관리 및 운용 등 시설관리 등의 업무를 수행하는 직무이다.
+								수질 분야에 측정망을 설치하고 지역의 수질오염 상태를 측정하여, 다각적인 연구와 실험 분석을 통해 수질오염에 대한 대책을 강구한다. 또한 오염물질 제거·감소를 위한 방지시설 설계·시공· 운영하는 업무를 수행하는 직무이다.
 							</p>
 							<figure>
 								<img src="contents/sub_24_1.png">
@@ -231,207 +236,161 @@ body {
 						</figure>
 						<div class="license-box-container">
 							<h4>
-								산업안전기사
+								대기환경기사
 							</h4>
 							<div class="license-box-info">
-								<h5>
-									분야&추천이유
-								</h5>
 								<h6>
-									분야:
-								</h6>
-								<ul>
-									<li>건설, 제조업, 공공기관</li>
-								</ul>
-								<h6>
-									추천이유:
+									진로:
 								</h6>
 								<ul class="bul">
-									<li>공기업·대기업 안전관리 부서</li>
-									<li class="no-bul">필수 자격</li>
-									<li>건설사 취업 시 가산점</li>
+									<li>한국환경공단</li>
+									<li>환경 관련 연구소 및 학계</li>
+									<li>환경플랜트회사 및 환경오염방지 설계·시공회사</li>
+									<li>환경시설 전문관리업체</li>
 								</ul>
 							</div>
 							<p>
 								<b>직무내용:</b>
-								산업현장에 배속되어 산업재해 예방계획의 수립, 작업환경의 점검 및 개선, 유해 및 위험방지, 사고사례 분석 및 개선, 근로자의 안전교육 및 훈련에 관한 업무를 수행하는 직무이다.
+								대기 분야에 측정망을 설치하고 지역의 대기오염 상태를 측정하여, 다각적인 연구와 실험 분석을 통해 대기오염에 대한 대책을 강구한다. 또한 대기오염물질을 제거하거나 감소시키기 위한 방지시설을 설계·시공· 운영하는 업무를 수행하는 직무이다.
 							</p>
 							<figure>
 								<img src="contents/sub_24_2.png">
 							</figure>
 						</div>
 					</div>
-					<div class="license-box">
+					<div class="license-box small">
 						<figure class="license-box-clip">
 							<img src="contents/sub_24_clip.png">
 						</figure>
 						<div class="license-box-container">
 							<h4>
-								토목기사
+								토양환경기사
 							</h4>
 							<div class="license-box-info">
-								<h5>
-									분야&추천이유
-								</h5>
 								<h6>
-									분야:
-								</h6>
-								<ul>
-									<li>공무원, 건설사, 엔지니어링</li>
-								</ul>
-								<h6>
-									추천이유:
+									진로:
 								</h6>
 								<ul class="bul">
-									<li>공무원 시험 가산점</li>
-									<li>공공프로젝트 필수 자격</li>
+									<li>국립환경과학원, 한국환경정책·평가연구원 등 정부 산하 기관</li>
+									<li>토양 및 지하수 환경 대행업체</li>
+									<li>환경컨설팅기관</li>
+									<li>각종 교육기관</li>
 								</ul>
 							</div>
 							<p>
 								<b>직무내용:</b>
-								토목시설을 포함하는 도로, 철도, 교량, 항만, 상하수도, 통신선로 등의 건설, 개량, 유지, 보수 등 토목사업에대한 조사, 연구, 계획, 설계, 시공, 기술지도 또는 토목 관계법규의 정리 및 운용 등을 수행하는 직무이다.
+								토양 및 지하수를 채취하여 시험·분석하고, 중금속 및 기름 등의 오염분포를 파악한다. 화학약품 처리나 열처리, 진공처리 등의 세척방법과미생물정화·동전기정화 등 다양한 정화공법을이용해 정화계획을 수립하며, 정화기술 및 시스템설계, 정화작업 감독, 예방대책 수립 등의 업무를 수행하는 직무이다.
 							</p>
-							<figure style="width: 55%">
+							<figure>
 								<img src="contents/sub_24_3.png">
 							</figure>
 						</div>
 					</div>
-					<div class="license-box">
+					<div class="license-box big">
 						<figure class="license-box-clip">
 							<img src="contents/sub_24_clip.png">
 						</figure>
 						<div class="license-box-container">
 							<h4>
-								정보처리기사
+								환경위해관리기사
 							</h4>
 							<div class="license-box-info">
-								<h5>
-									분야&추천이유
-								</h5>
 								<h6>
-									분야:
-								</h6>
-								<ul>
-									<li>IT, 개발, 공기업</li>
-								</ul>
-								<h6>
-									추천이유:
+									진로:
 								</h6>
 								<ul class="bul">
-									<li>개발자, IT 공기업 필수 자격</li>
-									<li>자바·DB·웹개발 역량 인증</li>
+									<li> 
+										중앙정부 및 지자체 부서 
+										<br> > 식품위생(식품위생팀,공중위생팀, 위생지도팀 등)
+										<br> > 환경(환경관리팀)
+									</li>
 								</ul>
 							</div>
-							<p>
+							<p class="pdb-30">
 								<b>직무내용:</b>
-								정보시스템의 생명주기 전반에 걸친 프로젝트 업무를 수행하며, 계획 수립, 분석, 설계, 구현, 시험, 운영, 유지보수 등의 업무를수행하는 직무이다.
+								화학물질로 인한 일반환경 및 산업환경의 유해인자에 노출되어 발생할 수 있는 위해성을 예측하고, 관리의 우선순위를 결정한 후 위해성 저감 대책을 수립하고 관리하는 직무이다.
 							</p>
-							<figure style="width: 55%">
+							<figure>
 								<img src="contents/sub_24_4.png">
 							</figure>
 						</div>
 					</div>
-					<div class="license-box">
+					<div class="license-box big">
 						<figure class="license-box-clip">
 							<img src="contents/sub_24_clip.png">
 						</figure>
 						<div class="license-box-container">
 							<h4>
-								소방설비기사<span>(기계, 전기 분야)</span>
+								자연환경관리기술사
 							</h4>
 							<div class="license-box-info">
-								<h5>
-									분야&추천이유
-								</h5>
 								<h6>
-									분야:
-								</h6>
-								<ul>
-									<li>소방시설관리, 건축</li>
-								</ul>
-								<h6>
-									추천이유:
+									진로:
 								</h6>
 								<ul class="bul">
-									<li>소방시설·점검 필수 자격</li>
-									<li>법적 의무 채용 자격</li>
-									<li>건축/전기기사와 함께 보유 시 시너지</li>
+									<li>국립환경과학원, 환경환경연구원 등 정부 산하 기관</li>
+									<li>토목 및 환경용역회사</li>
+									<li>환경영향평가 대행업체</li>
+									<li>환경컨설팅기관</li>
+									<li>각종 교육기관</li>
 								</ul>
 							</div>
 							<p>
 								<b>직무내용:</b>
-								소방시설공사 및 정비업체 등에서설계도면을 작성, 소방시설공사를 시공· 관리, 소방시설의 점검·정비와 화기의사용 및 취급 등 방화안전관리에 대한 감독, 소방계획에 의한 소화·통보·피난 등의훈련을 수행하는 직무이다.
+								자연생태계 및 관련 법규에 대한 전문지식을 바탕으로 생태계 평가 및 복원계획을 수립하고, 각종 사업의 타당성 조사와 기본계획·복원계획 수립및 각 단계별 생태변화의 검토서를 포함한 종합적 생태계 영향 평가의 총괄 및 조정 등을 수행하는 직무이다.
 							</p>
 							<figure>
 								<img src="contents/sub_24_5.png">
 							</figure>
 						</div>
 					</div>
-					<div class="license-box">
+					<div class="license-box small">
 						<figure class="license-box-clip">
 							<img src="contents/sub_24_clip.png">
 						</figure>
 						<div class="license-box-container">
 							<h4>
-								기계설계산업기사
+								소음진동기사
 							</h4>
 							<div class="license-box-info">
-								<h5>
-									분야&추천이유
-								</h5>
 								<h6>
-									분야:
-								</h6>
-								<ul>
-									<li>제조업, 기계설계, CAD</li>
-								</ul>
-								<h6>
-									추천이유:
+									진로:
 								</h6>
 								<ul class="bul">
-									<li>CAD 실무 활용</li>
-									<li>기계·설계·도면 업무 우대</li>
-									<li>자동화, 생산 설비 직무 우대</li>
+									<li>한국환경공단 등 유관기관</li>
+									<li>건축·기계 관련 업체</li>
+									<li>소음·진동 방지 설계 및 시공업체 </li>
 								</ul>
 							</div>
 							<p>
 								<b>직무내용:</b>
-								CAD시스템을 이용해 기계도면을 작성·변경·출도를 하며 부품도를 도면의 형식에 맞게 배열하고, 단면 형상의 표시및 치수 노트를 작성한다. 또한 컴퓨터 그래픽을 이용하여 부품의 전개도·조립도·재단도·유압회로·전기회로· 배관회로 등을 설계하며, 생산·품질·설비 등의 관리업무를 수행하는 직무이다.
+								공장, 공사장, 항공기, 철도, 사업장 등에서 소음· 진동 상태를 측정·분석하고, 연구와 실험을 통해저감 대책을 마련한다. 또한 분석한 소음진동원인을 제거 또는 감소시키기 위한 방지시설 설계· 시공·운영하는 업무를 수행하는 직무이다.
 							</p>
 							<figure>
 								<img src="contents/sub_24_6.png">
 							</figure>
 						</div>
 					</div>
-					<div class="license-box">
+					<div class="license-box small">
 						<figure class="license-box-clip">
 							<img src="contents/sub_24_clip.png">
 						</figure>
 						<div class="license-box-container">
 							<h4>
-								건축기사
+								폐기물처리기사
 							</h4>
 							<div class="license-box-info">
-								<h5>
-									분야&추천이유
-								</h5>
 								<h6>
-									분야:
-								</h6>
-								<ul>
-									<li>건축사무소, 시공사, 설계사</li>
-								</ul>
-								<h6>
-									추천이유:
+									진로:
 								</h6>
 								<ul class="bul">
-									<li>건축설계 및 현장관리 필수 자격</li>
-									<li>감리업체 및 대형건설사 가산점</li>
+									<li>한국환경공단 등 유관기관</li>
+									<li>폐기물처리업체</li>
 								</ul>
 							</div>
-							<p>
+							<p class="pdb-30 pdt-30">
 								<b>직무내용:</b>
-								건축시공에 관한 공학적 기술이론을 활용해, 건축물 공사의 공정·품질·안전·환경·공무 등을 관리하고, 공종별 공사를 진행 및 시공에 필요한 기술적 지원을 수행하는 직무이다.
+								생활 및 산업활동에서 발생하는 폐기물을 기계적 분리, 건조, 파쇄, 압축, 소각, 퇴비화 등의 방법으로 감량화·무해화·안전화하여 취급이 용이하도록 처리하는 업무를 담당하는 직무이다.
 							</p>
 							<figure class="mobile-small">
 								<img src="contents/sub_24_7.png">
@@ -444,29 +403,23 @@ body {
 						</figure>
 						<div class="license-box-container">
 							<h4>
-								가스기사
+								자연생태복원산업기사
 							</h4>
 							<div class="license-box-info">
-								<h5>
-									분야&추천이유
-								</h5>
 								<h6>
-									분야:
-								</h6>
-								<ul>
-									<li>플랜트, 에너지, 화학</li>
-								</ul>
-								<h6>
-									추천이유:
+									진로:
 								</h6>
 								<ul class="bul">
-									<li>고위험 산업군 요구 자격</li>
-									<li>고연봉 특수직 진출 용이</li>
+									<li>토목건설 및 엔지니어링 업체</li>
+									<li>환경복원 전문업체</li>
+									<li>생태계 위해성 평가기관</li>
+									<li>전과정평가(LCA) 산업체</li>
+									<li>국·공립공원 관리기관 및 정부투자기관</li>
 								</ul>
 							</div>
 							<p>
 								<b>직무내용:</b>
-								고압가스 및 용기제조의 공정관리, 가스의 사용·취급 지도 및 감독, 저장·판매·공급 등의 과정에서 안전관리 지도 및 감독을 수행하는 직무이다.
+								생태공학기술과 환경계획·복원설계에 대한 지식을 바탕으로, 생태계의 현황을 조사하고 교란 요인을 예측· 분석하며, 훼손되었거나 훼손이 예상되는자연생태환경에 대한 조사·복원 시공 및 모니터링을 수행하는 직무이다.
 							</p>
 							<figure>
 								<img src="contents/sub_24_8.png">
