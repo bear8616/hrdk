@@ -16,13 +16,19 @@
 
 :root {
 	--color-first: #fff; 		/* 헤더 배경 */
-	--color-second: #F86856; 	/* h2 색상 */
+	--color-second: #375885; 	/* h2 색상 */
 	--color-third: #F4B57F;		/* 전체배경 */
 	--color-fourth: #F86856; 	/* 프롤로그 배경 */
 	--color-fifth: #000; 		/* 프롤로그 색상 */
 }
 body {
-	background-color: var(--color-third);
+	/*background-color: var(--color-third);*/
+	background: linear-gradient(
+	    135deg,
+	    #e2cecd 0%,   /* 왼쪽 위 살구+보라빛 */
+	    #8792b9 40%,  /* 중간 보라/퍼플 */
+	    #637eae 100%  /* 오른쪽 아래 파란색 */
+	);
 	max-width: 100vw;
 	overflow-x: hidden;
 }
@@ -188,7 +194,8 @@ body {
     transform: translateX(32px) translateY(15px) rotate(90deg);
 }
 .dialogue.left p::after,
-.dialogue-container.list div::after {
+.dialogue-container.list div::after,
+.dialogue-container.table div::after {
 	content: "";
 	display: block;
 	width: 54px;
@@ -201,7 +208,8 @@ body {
     top: 0;
     transform: translateX(-21px) translateY(5px) rotate(0deg);
 }
-.dialogue-container.list div {
+.dialogue-container.list div,
+.dialogue-container.table div {
 	background-color: #fff;
     padding: 1.2rem;
     border-radius: 10px;
@@ -213,15 +221,27 @@ body {
     box-shadow: -3px 3px 0px rgba(0, 0, 0, 0.3);
 }
 .dialogue-container.list div ul {
-	margin-top: 0.5rem;
+	margin-top: 0.8rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	gap: 1.5rem;
 }
 .dialogue-container.list div li {
-	padding-left: 1.5rem;
 	margin-top: 0.1rem;
 	position: relative;
-	text-decoration: underline;
-	text-decoration-thickness: 0.01rem; 
-	text-underline-offset: 0.3rem;
+	border: 1px solid #000;
+}
+.dialogue-container.list div li span {
+	display: block;
+	text-align: center;
+	font-size: 0.9rem;
+	padding: 0.8rem 0;
+}
+.dialogue-container.list div li span.up {
+	font-size: 0.8rem;
+	background-color: var(--color-second);
+	color: #fff;
+	padding: 0.5rem 0;
 }
 .dialogue-container.list div li::before {
 	content: "";
@@ -234,7 +254,38 @@ body {
     position: absolute;
     left: 0;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateX(-100%) translateY(-50%);
+}
+.dialogue-container.list div li:nth-child(1)::before {
+	display: none;
+}
+.table-normal {
+	margin-top: 1rem;
+}
+.table-normal tr td {
+	border-color: var(--color-second);
+	line-height: 1.45;
+	padding: 0.6rem 0.6rem;
+	word-break: keep-all;
+}
+.table-normal tr th {
+	background-color: var(--color-second);
+	border-color: #fff;
+	color: #fff;
+}
+.table-normal tbody tr td:first-child {
+    text-align: center;
+    border-left-color: #fff;
+}
+.table-normal tbody tr td:nth-last-child(1) {
+	border-right-color: #fff;
+}
+.table-normal tbody tr td ul li {
+	display: flex;
+}
+.table-normal tbody tr td ul li::before {
+	content: "•";
+	padding-right: 0.1rem;
 }
 @media (max-width:767px) {
 	.article-header-container-2 {
@@ -298,13 +349,13 @@ body {
 					<div class="article-header-text-2">
 						<span class="story-label">퍼스널 매칭업(業)</span>
 						<h4>
-							사내 교육에서 
+							기업 경쟁력을 업그레이드!
 						</h4>
 						<h2>
-							공신력 있는 제도로!
+							근로자의 역량이 <br>기업의 성장으로 이어지다
 						</h2>
 						<p>
-							기계 제조업체를 운영하는 박수진(가명) 씨는 직원들의 기술 수준을 높이기 위해 자체 교육 과정을 꾸준히 운영해 왔지만 사내 교육만으로는 외부에서 인정받기 어려워 직원들의 동기부에도 한계가 있었다. 자사 교육 과정에 공신력을 부여받을 수 없는지, 고민 끝에 수진 씨는 한국산업인력공단 자격품질관리국 자격품질기획부에 도움을 요청했다.
+							신재생에너지설비 기업을 운영하는 김길영(가명) 씨는 업무 관련 지식, 경험, 노하우를 작업장 내에서 체계적으로 축적 및 확산시키고자 했으나 현실적인 한계에 부딪쳤다. 근로자의 직무역량을 높이고 학습 문화를 장착시키며, 일련의 활동이 원활히 이루어질 수 있도록 지원을 받을 방법을 고민하던 그는 한국산업인력공단 직업능력국 능력개발기획부에 도움을 요청했다.
 						</p>
 						<div class="article-meta">
 							<span>글</span>
@@ -328,36 +379,34 @@ body {
 							</figure>
 							<div class="dialogue right">
 								<div class="dialogue-container">
-									<h6>박수진</h6>
+									<h6>김길영</h6>
 									<p>
-										안녕하세요.😁<br>
-										저는 기계 제조업체를 운영하는 박수진(가명)입니다!🦾
+										안녕하세요.😁 <br>
+										저는 신재생에너지설비 기업을 운영하는 김길영(가명)입니다!🦾
 									</p>
 								</div>
 							</div>
 							<div class="dialogue left">
 								<div class="dialogue-container">								
-									<h6>HRDK 자격품질기획부</h6>
+									<h6>HRDK 능력개발기획부</h6>
 									<p>
-										안녕하세요. 한국산업인력공단 자격품질관리국 자격품질기획부입니다.<br>
-										저희는 국가기술자격과 기업자격 제도의 품질을 기획·관리하며, 자격제도의 운영방향을 수립하고 개선하며, 특히 기업자격 정부인정제를 총괄하여 기업의 자체 교육·훈련 과정을 공신력 있는 자격으로 인정하는 업무를 수행하고 있습니다.
+										안녕하세요. 한국산업인력공단 직업능력국 능력개발기획부입니다. 저희는 근로자와 기업의 역량 강화를 위한 다양한 교육 관련 사업을 중심으로, 능력개발사업의 계획을 중장기적인 안목에서 기획하고 그에 맞는 예산을 관리하고 있습니다. 또한 근로자와 기업이 능력개발 사업에 적극적으로 참여할 수 있도록 능력개발 촉진 사업도 함께 수행하고 있습니다.
 									</p>
 								</div>
 							</div>
 							<div class="dialogue right">
 								<div class="dialogue-container">
-									<h6>박수진</h6>
+									<h6>김길영</h6>
 									<p>
-										사업주 자격검정사업과 기업자격 정부인정제는 무엇인가요?🤔
+										중소기업 학습조직화 사업은 무엇인가요?🤓
 									</p>
 								</div>
 							</div>
 							<div class="dialogue left">
 								<div class="dialogue-container">
-									<h6>HRDK 자격품질기획부</h6>
+									<h6>HRDK 능력개발기획부</h6>
 									<p>
-										사업주 자격검정사업과 기업자격 정부인정제는 사실상 같은 제도를 지칭합니다.<br>
-										공식 명칭은 기업자격 정부인정제로, 기업이 자체적으로 개발한 교육·훈련 과정을 ‘자격’으로 운영할 수 있도록 국가가 인정하는 제도입니다. 즉 회사 내부에서만 통용되던 교육·평가 체계를 공신력 있는 자격으로 제도화해 주는 것입니다.
+										중소기업 학습조직화 사업이란 중소기업이 근로자 능력향상을 위해 학습조직을 도입하고자 할 경우 이에 필요한 컨설팅, 기술 지원뿐만 아니라 학습 인프라 구축 등에 필요한 비용을 지원하는 제도입니다.
 									</p>
 								</div>
 							</div>
@@ -369,77 +418,68 @@ body {
 							</figure>							
 							<div class="dialogue right">
 								<div class="dialogue-container">
-									<h6>박수진</h6>
+									<h6>김길영</h6>
 									<p>
-										저희 회사도 신청할 수 있나요? 자격 요건이 궁금합니다.👩‍💼🏢
+										저희 회사도 지원대상에 해당하나요? 자격 요건이 궁금합니다.🧑‍💼🏢
 									</p>
 								</div>
 							</div>
 							<div class="dialogue left">
 								<div class="dialogue-container list">
-									<h6>HRDK 자격품질기획부</h6>
+									<h6>HRDK 능력개발기획부</h6>
+									<p>
+										네, 가능합니다. 지원대상은 「고용보험법 시행령」 제12조에 따른 우선지원 대상기업 또는 사업주 단체로서, 일학습병행, 사업주 훈련 등 직업훈련사업 참여 이력이 있고, 상시근로자 수가 최소 20인 이상인 기업이 해당됩니다. 
+									</p>
+								</div>
+							</div>							
+							<div class="dialogue right">
+								<div class="dialogue-container">
+									<h6>김길영</h6>
+									<p>
+										꼭 20인 이상이어야 하는 것일까요?🥲
+									</p>
+								</div>
+							</div>
+							<div class="dialogue left">
+								<div class="dialogue-container">
+									<h6>HRDK 능력개발기획부</h6>
+									<p>
+										신기술분야 기업의 경우 상시근로자수 최소 10인 이상일 경우 참여가 가능합니다.(인공지능, 빅데이터, 클라우드, 사물인터넷, 5G, 3D프린팅, 블록체인, 지능형반도체, 첨단소재, 스마트헬스케어, AR/VR, 드론, 스마트공장, 스마트팜, 지능형 로봇, 자율주행차, O2O, 신재생에너지, 스마트시티, 핀테크) 자세한 사항은 HRD4U를 통해 확인하실 수 있습니다.
+									</p>
+								</div>
+							</div>							
+							<div class="dialogue right">
+								<div class="dialogue-container">
+									<h6>김길영</h6>
+									<p>
+										신청방법 및 선정 절차에 대해서 알고 싶어요📄
+									</p>
+								</div>
+							</div>
+							<div class="dialogue left">
+								<div class="dialogue-container list">
+									<h6>HRDK 능력개발기획부</h6>
 									<div>
-										네, 가능합니다. 기업자격 정부인정제(사업주 자격검정사업)는 모든 기업(사업주)가 신청할 수 있으며, 다음과 같은 요건을 충족해야 합니다.<br>
+										소요 기간은 별도로 명시되어 있지 않으며, 기업의 준비 상황, 신청 내용의 복잡성, 정부 심사 절차 진행 등에 따라 달라질 수 있습니다. 신청 전에는 Q-Net을 통해 기업자격 검정사업 시행 규정과 요건을 확인하고, 심사 기준을 충족한 후 진행하시기 바랍니다.
 										<ul>
 											<li>
-												<b>운영 주체:</b>
-												사업주 단독·공동으로 운영, 소속 근로자 대상
+												<span class="up">참여기업 모집공고</span>
+												<span>공단(본부)</span>
 											</li>
 											<li>
-												<b>자격 체계:</b>
-												종목·검정 방법·합격 기준·응시자격 등이 명확히 정립
+												<span class="up">참여기업 신청접수</span>
+												<span>기업</span>
 											</li>
 											<li>
-												<b>현장 연계성:</b>
-												자격 종목이 현장 직무에 필요한 지식·기능과 직접 연관
+												<span class="up">서면검토 및 현장실사</span>
+												<span>공단(지부지사)</span>
 											</li>
 											<li>
-												<b>운영 기반:</b>
-												안정적 운영을 위한 인력·재원 확보 및 공정한 검정 체계 마련
-											</li>
-											<li>
-												<b>사후 관리:</b>
-												합격자에 대한 승진·승급·보수 등 우대 규정 마련
-											</li>
-											<li>
-												<b>운영 원칙:</b>
-												영리 목적 금지, 법령 및 사회질서 준수
+												<span class="up">최종선정심사</span>
+												<span>공단(본부)</span>
 											</li>
 										</ul>
 									</div>
-								</div>
-							</div>							
-							<div class="dialogue right">
-								<div class="dialogue-container">
-									<h6>박수진</h6>
-									<p>
-										기업자격 정부인정제를 신청하려면 어떤 절차가 필요한가요?📅
-									</p>
-								</div>
-							</div>
-							<div class="dialogue left">
-								<div class="dialogue-container">
-									<h6>HRDK 자격품질기획부</h6>
-									<p>
-										신고기업은 신고에 필요한 서류를 한국산업인력공단 이사장에게 제출해야 합니다. 이후 공단 이사장은 현장조사와 인정위원회 심의 등을 거쳐 해당 신청 기관에 통지하며, 적합 판정 시 이를 홈페이지에 공고합니다. <br>
-										필요 준비 서류는 Q-Net(자격정보 > 기업자격 정부인정제 > 기업자격 신규·변경·폐지신청 절차)에서 다운받을 수 있습니다.
-									</p>
-								</div>
-							</div>							
-							<div class="dialogue right">
-								<div class="dialogue-container">
-									<h6>박수진</h6>
-									<p>
-										보통 제도 신청부터 인정까지 얼마나 걸리나요?📭⌚
-									</p>
-								</div>
-							</div>
-							<div class="dialogue left">
-								<div class="dialogue-container">
-									<h6>HRDK 자격품질기획부</h6>
-									<p>
-										소요 기간은 별도로 명시되어 있지 않으며, 기업의 준비 상황, 신청 내용의 복잡성, 정부 심사 절차 진행 등에 따라 달라질 수 있습니다. 신청 전에는 Q-Net을 통해 기업자격 검정사업 시행 규정과 요건을 확인하고, 심사 기준을 충족한 후 진행하시기 바랍니다.
-									</p>
 								</div>
 							</div>
 						</div>
@@ -449,49 +489,107 @@ body {
 							</figure>							
 							<div class="dialogue right">
 								<div class="dialogue-container">
-									<h6>박수진</h6>
+									<h6>김길영</h6>
 									<p>
-										기업자격 정부인정제를 도입한 이후에도 제도 내용을 변경하거나 경영상의 이유로 폐지가 가능한가요?😅
+										사업에 참여하면 실제로 어떤 지원을 받을 수 있나요?💸
+									</p>
+								</div>
+							</div>
+							<div class="dialogue left">
+								<div class="dialogue-container table">
+									<h6>HRDK 능력개발기획부</h6>
+									<div>
+										지원 유형은 총 5가지로, 학습조 활동 지원, 우수 활동 지원(계속 기업), 학습 네트워크 지원, 외부 전문가 지원, 학습인프라 구축 지원(우수 기업)이 있습니다. 자세한 사항은 HRD4U를 통해 확인하실 수 있습니다.
+										<table class="table-normal">
+											<thead>
+											    <tr>
+											      <th style="width: 25%;">유형</th>
+											      <th style="width: 75%;">지원내용</th>
+											    </tr>
+											</thead>
+											<tbody>
+											    <tr>
+											      <td>학습조 활동 지원</td>
+											      <td>
+											        <ul>
+											          <li>학습조 활동비(조당)</li>
+											          <li>학습조직화 활성화를 위한 교육비</li>
+											          <li>학습리더 및 학습조장 활동비</li>
+											          <li>기업당 100만 원 한도</li>
+											        </ul>
+											      </td>
+											    </tr>
+
+											    <tr>
+											      <td>우수 활동 지원(계속기업)</td>
+											      <td>
+											        <ul>
+											          <li>사내학습조 경진대회 포상금</li>
+											          <li>기업당 50만 원 한도</li>
+											        </ul>
+											      </td>
+											    </tr>
+
+											    <tr>
+											      <td>학습 네트워크 지원</td>
+											      <td>
+											        <ul>
+											          <li>학습 네트워크 활동비</li>
+											        </ul>
+											      </td>
+											    </tr>
+
+											    <tr>
+											      <td>외부 전문가 지원</td>
+											      <td>
+											        <ul>
+											          <li>학습조직화를 위한 전문 코칭 및 컨설팅 지원</li>
+											        </ul>
+											      </td>
+											    </tr>
+
+											    <tr>
+											      <td>학습인프라 구축 지원(우수기업)</td>
+											      <td>
+											        <ul>
+											          <li>학습모임을 위한 공간 구축 지원</li>
+											        </ul>
+											      </td>
+											    </tr>
+											</tbody>											
+										</table>
+									</div>
+								</div>
+							</div>							
+							<div class="dialogue right">
+								<div class="dialogue-container">
+									<h6>김길영</h6>
+									<p>
+										지원 기간은 어떻게 되나요?📅💸
 									</p>
 								</div>
 							</div>
 							<div class="dialogue left">
 								<div class="dialogue-container">
-									<h6>HRDK 자격품질기획부</h6>
+									<h6>HRDK 능력개발기획부</h6>
 									<p>
-										기업자격 정부인정제는 도입 이후에도 제도 내용을 변경하거나 폐지할 수 있습니다. 사업장 명칭·소재지, 자격 종목 명칭, 실시 규정 등 주요 사항이 변경되면 변경일 기준 30일 이내에 신고서와 증빙서류를 공단 이사장에게 제출해야 하며, 사업주가 자격 운영을 포기하거나 폐업하는 경우, 또는 3년간 자격검정을 실시하지 않을 시 폐지 신고서를 제출하여 제도를 종료할 수 있습니다.
+										지원기간은 1년을 원칙으로 하되, 사업성과 평가 결과에 따라 최대 3년까지 지원 가능합니다. 단, 외부전문가 지원 유형, 학습인프라 지원유형은 1년(1회)만 지원됩니다.
 									</p>
 								</div>
 							</div>							
 							<div class="dialogue right">
 								<div class="dialogue-container">
-									<h6>박수진</h6>
+									<h6>김길영</h6>
 									<p>
-										기업자격 정부인정제는 제도 인정 외 별도 혜택은 없나요?🏆💸
+										사업 수행절차는 어떻게 되나요?🚩
 									</p>
 								</div>
 							</div>
 							<div class="dialogue left">
 								<div class="dialogue-container">
-									<h6>HRDK 자격품질기획부</h6>
+									<h6>HRDK 능력개발기획부</h6>
 									<p>
-										과거에는 사업지원금 혜택이 있었으나, 일부 기업이 지원금 혜택만 받고 제도를 성실히 운영하지 않은 사례가 발생했습니다. 이에 정부 방침에 맞춰 2024년부터 사업지원금은 폐지되었으며, 대신 정부는 비현물적 지원사항을 모색했고, 그 일환으로 2025년부터는 직무능력은행제 디지털배지 연계가 적용되고 있습니다.
-									</p>
-								</div>
-							</div>							
-							<div class="dialogue right">
-								<div class="dialogue-container">
-									<h6>박수진</h6>
-									<p>
-										본 제도에 관해서 참고할 만한 샘플이나 가이드북이 있나요?📕
-									</p>
-								</div>
-							</div>
-							<div class="dialogue left">
-								<div class="dialogue-container">
-									<h6>HRDK 자격품질기획부</h6>
-									<p>
-										해당 제도와 관련해 컨설팅 신청서, 가이드북, 사업소개 자료 등이 제공되고 있습니다. 이를 참고로 기업 내 체계를 준비하면 도움이 될 것입니다. 관련 자료는 Q-Net(자격정보 > 기업자격 정부인정제 > 기업자격 정부인정제 관련 자료실)에서 다운받을 수 있습니다.
+										수행 절차는 참여기업 모집 및 선정 → 사업계획서 제출, 승인 및 사전지원금 지급 → CEO연수, 학습리더 및 조장 교육 → 직업능력개발훈련 종합컨설팅 → 사업실시 및 모니터링 → 학습조 활동 완료보고 → 성과평가 및 회계정산 → 사후지원금 정산 및 지급 순으로 진행됩니다.
 									</p>
 								</div>
 							</div>
